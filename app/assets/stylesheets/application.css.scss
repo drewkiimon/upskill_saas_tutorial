@@ -32,6 +32,29 @@ h1, h2, h3 {
     border: none;
 }
 
+// navbar-brand would not work alone
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: white;
+    opacity: 0.75;
+}
+
+// Very specific
+.navbar-collapse .navbar-nav li a {
+    color: white;
+}
+
+// Very specific
+.navbar-collapse .navbar-nav li a:hover{
+    color: white;
+    opacity: 0.75;
+}
+
+
+
 .home-page {
     color: white;
     margin-top: -20px;
