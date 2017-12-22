@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
             flash[:success] = "Message sent."
            redirect_to new_contact_path
         else
+            # :error is how you call the key in this hash (dictionary)
             flash[:error] = @contact.errors.full_messages.join(", ")
             redirect_to new_contact_path
         end
