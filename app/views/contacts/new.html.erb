@@ -6,7 +6,8 @@ Controller -> View File -> Add Route
         <h3 class = "text-center">Contact Us</h3>
         
         <div class = "col-md-4 col-md-offset-4">
-            <%= flash[:notice] %>
+            <%= flash[:success] %>
+            <%= flash[:error] %>
             <div class = "well">
                 <!-- Ruby way to make forms-->
                 <!-- @contact variable from contacts_controller-->
