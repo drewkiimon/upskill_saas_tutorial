@@ -34,7 +34,14 @@
 </div><!-- /.navbar-collapse -->
 </div>
 </nav>
+<div class = "container">
+  <!-- Going through flash hash to get different message types-->
+  <% flash.each do |type, msg| %>
+  <!-- String interpolation -->
+    <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+  <% end %>
   <!-- Brings in the rest of our view files-->
+</div>
    <%= yield %>
 </body>
 </html>
