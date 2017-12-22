@@ -4,8 +4,8 @@ class ContactsController < ApplicationController
     end
     
     def create
-        @contact = Contact.new(contact_params)
-        if @contact.save
+        @contact = Contact.new(contact_params) #{name : 'asdf', email: 'asdf', comments: 'asdf'}
+        if @contact.save # .save saves to our db
            redirect_to new_contact_path, notice: "Message sent." 
         else
             redirect_to new_contact_path, notice: "Error occured."
@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
     end
     
     private
+        # This is a part of the create function ; Security feature
         def contact_params
             params.require(:contact).permit(:name, :email, :comments)
         end
