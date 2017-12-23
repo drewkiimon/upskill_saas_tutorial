@@ -37,9 +37,10 @@
 <div class = "container">
   <!-- Going through flash hash to get different message types-->
   <% flash.each do |type, msg| %>
-  <!-- String interpolation -->
+  <!-- String interpolation; equal sign injects into code -->
     <%= content_tag :div, msg, class: "alert alert-#{type}" %>
   <% end %>
+  
   <!-- Brings in the rest of our view files-->
 </div>
    <%= yield %>
