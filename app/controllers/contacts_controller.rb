@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
     def new
+        # Literally the form, and calls the page under view
         @contact = Contact.new
     end
     
