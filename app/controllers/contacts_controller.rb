@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
     def create
         @contact = Contact.new(contact_params) #{name : 'asdf', email: 'asdf', comments: 'asdf'}
         if @contact.save # .save saves to our db
+            # :contact is key in param, then :name is key in contact hash
             name = params[:contact][:name]
             email = params[:contact][:email]
             body = params[:contact][:comments]
@@ -24,6 +25,7 @@ class ContactsController < ApplicationController
     private
         # This is a part of the create function ; Security feature
         def contact_params
+            # Params is hash, and adding a key with its own hash (:contact)
             params.require(:contact).permit(:name, :email, :comments)
         end
 end
