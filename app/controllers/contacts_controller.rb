@@ -7,8 +7,13 @@ class ContactsController < ApplicationController
     def create
         @contact = Contact.new(contact_params) #{name : 'asdf', email: 'asdf', comments: 'asdf'}
         if @contact.save # .save saves to our db
+            name = params[:contact][:name]
+            email = params[:contact][:email]
+            body = params[:contact][:comments]
+            
+            ContactMailer.contact_email(name, email, body).deliver
             flash[:success] = "Message sent."
-           redirect_to new_contact_path
+            redirect_to new_contact_path
         else
             # :error is how you call the key in this hash (dictionary)
             flash[:danger] = @contact.errors.full_messages.join(", ")
