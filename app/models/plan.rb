@@ -1,3 +1,4 @@
 class Plan < ActiveRecord::Base
-   has_many :users 
+    # Pro plan and basic plan can have many users
+    has_many :users 
 end
