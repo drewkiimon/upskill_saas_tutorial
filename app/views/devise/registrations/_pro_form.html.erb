@@ -1,6 +1,9 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <!-- This form field allows our program to know what plan they are a part of-->
+  <%= hidden_field_tag 'plan', params[:plan] %>
+
   <div class="field form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: 'form-control' %>
